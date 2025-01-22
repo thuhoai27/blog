@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="home">
+  {% if paginator.posts %}
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.excerpt %}
+            {{ post.excerpt }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- 페이징 네비게이션 -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; 이전</a>
+      {% endif %}
+
+      <span class="page_number">
+        {{ paginator.page }} / {{ paginator.total_pages }}
+      </span>
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">다음 &raquo;</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div> 

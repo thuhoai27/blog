@@ -1,0 +1,18 @@
+# Jekyll 빌드 결과물
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# 일반적인 Ruby 파일들
+*.gem
+.bundle
+vendor/
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# IDE 설정 파일
+.idea/
+.vscode/
